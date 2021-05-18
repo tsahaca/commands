@@ -11,18 +11,18 @@
 [cols="50,50"]
 |===
 |create a consumer in a consumer group
-|curl -X POST  -H "Content-Type: application/vnd.kafka.v2+json" \
-      --data '{"name": "my_consumer_instance", "format": "avro", "auto.offset.reset": "earliest"}' \
+|curl -X POST  -H "Content-Type: application/vnd.kafka.v2+json" 
+      --data '{"name": "my_consumer_instance", "format": "avro", "auto.offset.reset": "earliest"}' 
       http://localhost:8082/consumers/my_consumers
 
 |subscribe to a topic or topics
-|curl -X POST -H "Content-Type: application/vnd.kafka.v2+json" --data '{"topics":["myTopic"]}' \      http://localhost:8082/consumers/my_consumers/instances/my_consumer_instance/subscription
+|curl -X POST -H "Content-Type: application/vnd.kafka.v2+json" --data '{"topics":["myTopic"]}'       http://localhost:8082/consumers/my_consumers/instances/my_consumer_instance/subscription
 
 
 |Fetch the Records
 |curl -X GET -H "Accept: application/vnd.kafka.avro.v2+json"  http://localhost:8082/consumers/my_consumers/instances/my_consumer_instance/records \| jq
 
 |Delete the consumer, when no longer needed
-|curl -X DELETE -H "Content-Type: application/vnd.kafka.v2+json" \    http://localhost:8082/consumers/movie_consumers/instances/movie_consumer_instance
+|curl -X DELETE -H "Content-Type: application/vnd.kafka.v2+json"   http://localhost:8082/consumers/movie_consumers/instances/movie_consumer_instance
 
 |===
