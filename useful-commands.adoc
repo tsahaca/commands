@@ -24,4 +24,5 @@
 
 |Delete the consumer, when no longer needed
 |curl -X DELETE -H "Content-Type: application/vnd.kafka.v2+json" \    http://localhost:8082/consumers/movie_consumers/instances/movie_consumer_instance
+
 |===
