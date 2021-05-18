@@ -10,20 +10,18 @@
 == To consume form Topic with Rest Proxy
 [cols="50,50"]
 |===
-|Spring Boot
-|src/main/java, pom.xml, config/application.yaml
+|create a consumer in a consumer group
+|curl -X POST  -H "Content-Type: application/vnd.kafka.v2+json" \
+      --data '{"name": "my_consumer_instance", "format": "avro", "auto.offset.reset": "earliest"}' \
+      http://localhost:8082/consumers/my_consumers
 
-|Jenkins
-|Jenkinsfile, conf/env/*
+|subscribe to a topic or topics
+|curl -X POST -H "Content-Type: application/vnd.kafka.v2+json" --data '{"topics":["myTopic"]}' \      http://localhost:8082/consumers/my_consumers/instances/my_consumer_instance/subscription
 
-|Docker
-|Dockerfile, config/*
 
-|k8
-|kubernetes/*
+|Fetch the Records
+|curl -X GET -H "Accept: application/vnd.kafka.avro.v2+json"  http://localhost:8082/consumers/my_consumers/instances/my_consumer_instance/records | jq
 
-|vault
-|json file with Config & Secrets
 
 
 |===
