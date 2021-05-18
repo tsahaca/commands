@@ -1,2 +1,29 @@
 # To Check Open ports
-nc -vz <host> <port>
+== Useful
+[cols="50,50"]
+|===
+|Check for Open Port
+|nc -vz <host> <port>
+
+|===
+
+== To consume form Topic with Rest Proxy
+[cols="50,50"]
+|===
+|Spring Boot
+|src/main/java, pom.xml, config/application.yaml
+
+|Jenkins
+|Jenkinsfile, conf/env/*
+
+|Docker
+|Dockerfile, config/*
+
+|k8
+|kubernetes/*
+
+|vault
+|json file with Config & Secrets
+
+
+|===
