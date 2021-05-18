@@ -1,4 +1,4 @@
-# To Check Open ports
+# Check Open ports
 == Useful
 [cols="50,50"]
 |===
@@ -7,7 +7,7 @@
 
 |===
 
-== To consume form Topic with Rest Proxy
+== To consume form Topics with Rest Proxy
 [cols="50,50"]
 |===
 |create a consumer in a consumer group
@@ -22,6 +22,6 @@
 |Fetch the Records
 |curl -X GET -H "Accept: application/vnd.kafka.avro.v2+json"  http://localhost:8082/consumers/my_consumers/instances/my_consumer_instance/records | jq
 
-
-
+|Delete the consumer, when no longer needed
+|curl -X DELETE -H "Content-Type: application/vnd.kafka.v2+json" \    http://localhost:8082/consumers/movie_consumers/instances/movie_consumer_instance
 |===
