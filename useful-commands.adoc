@@ -1,0 +1,2 @@
+# To Check Open ports
+nc -vz <host> <port>
